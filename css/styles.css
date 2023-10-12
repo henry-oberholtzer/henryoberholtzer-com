@@ -1,0 +1,22 @@
+/* resets global box sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+
+/* centers main-box */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* adjusts main box */
+.main-box {
+    aspect-ratio: 1.25 / 1;
+    height: 60vh;
+    width: calc(height)
+}
