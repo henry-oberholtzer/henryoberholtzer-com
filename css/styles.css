@@ -1,9 +1,43 @@
-/* resets global box sizing */
+:root {
+    --main-font-color: #000000;
+}
+
+
+/* resets box sizing */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    font-family: "Computer Modern";
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+/* fonts */
+@font-face {
+    font-family: "Computer Modern";
+    src:
+        url("../resources/fonts/CMUNRM.OTF") format("opentype");
+    font-weight: normal;        
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src:
+        url("../resources/fonts/CMUNRM.OTF") format("opentype");
+    font-weight: normal;
+    font-style: italic;        
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src:
+        url("../resources/fonts/CMUNBX.OTF") format("opentype");
+    font-weight: bold; 
 }
 
 /* centers main-box */
@@ -17,6 +51,40 @@ body {
 /* adjusts main box */
 .main-box {
     aspect-ratio: 1.25 / 1;
-    height: 60vh;
+    height: 60vh; 
+    min-height: 60vh;
     width: calc(height)
+}
+
+/* header format */
+.header {
+    font-size: 2.375rem;
+    text-transform: lowercase;
+}
+
+
+/* navigation format */
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    
+}
+
+nav a, nav span {
+    display: flex;
+    flex-grow: inherit;
+    justify-content: center;
+    margin: 1%;
+}
+
+/* responsive css */
+@media (orientation: portrait) and (max-width: 561px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .main-box {
+        width: 80vw;
+    }
 }
